@@ -1,0 +1,19 @@
+
+POST {{API_HOST}}/api/v1/translate/message-input
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	user1
+X-Chat-Id:	chat1
+
+{
+  "source": "consultant",
+  "source_lang": "HI",
+  "target_lang": "EN",
+  "input_message": true,
+  "messages": [
+    {
+      "id": 1,
+      "text": "Hello"
+    }
+  ]
+}

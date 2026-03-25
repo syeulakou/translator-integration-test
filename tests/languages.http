@@ -1,0 +1,31 @@
+
+POST {{API_HOST}}/api/v1/settings/lang-pair
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	user1
+X-Chat-Id:	chat1
+
+{
+  "source_lang": "AR",
+  "target_lang": "RU"
+}
+
+###
+
+POST {{API_HOST}}/api/v1/settings/lang-pair
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	user1
+X-Chat-Id:	chat1
+
+{
+  "source_lang": "HI",
+  "target_lang": "EN"
+}
+
+###
+
+GET {{API_HOST}}/api/v1/settings/languages
+Authorization: Bearer {{API_TOKEN}}
+X-User-Id:	user1
+X-Chat-Id:	chat1
