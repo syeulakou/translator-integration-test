@@ -1,0 +1,36 @@
+
+@userId = "3"
+@chatId = "3"
+
+POST {{API_HOST}}/api/v1/settings/lang-detect
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "messages": [
+    {
+      "id": 3,
+      "text": "Определяем RU язык"
+    }
+  ]
+}
+
+###
+
+POST {{API_HOST}}/api/v1/settings/lang-detect
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "messages": [
+    {
+      "id": 3,
+      "text": "Detecting EN language"
+    }
+  ]
+}
+

@@ -1,0 +1,62 @@
+@userId = "201"
+@chatId = "200"
+
+POST {{API_HOST}}/api/v1/settings/lang-pair
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source_lang": "AR",
+  "target_lang": "RU"
+}
+
+
+### Подключился оператор на языке RU
+
+POST {{API_HOST}}/api/v1/translate/dialogue
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "AR",
+  "target_lang": "RU",
+  "messages": [
+    {
+      "id": 1,
+      "text": "مرحبا!" 
+    },
+    {
+      "id": 2,
+      "text": "مسألة مالية" 
+    }
+  ]
+}
+
+### Клиент отредактировал сообщения и запрос повторного перевода
+
+POST {{API_HOST}}/api/v1/translate/dialogue
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "AR",
+  "target_lang": "RU",
+  "messages": [
+    {
+      "id": 1,
+      "text": "مرحبًا مرحبًا!"
+    },
+    {
+      "id": 2,
+      "text": "مسألة مالية"
+    }
+  ]
+}

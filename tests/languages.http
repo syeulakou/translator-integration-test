@@ -1,31 +1,36 @@
 
+@userId = "21"
+@chatId = "20"
+
+### Установка языковой пары AR-RU
+
 POST {{API_HOST}}/api/v1/settings/lang-pair
 Authorization: Bearer {{API_TOKEN}}
 Content-Type:	application/json
-X-User-Id:	user1
-X-Chat-Id:	chat1
+X-User-Id:	{{{userId}}}
+X-Chat-Id:	{{{{{chatId}}}}}
 
 {
   "source_lang": "AR",
   "target_lang": "RU"
 }
 
-###
+### Установка языковой пары HI-EN
 
 POST {{API_HOST}}/api/v1/settings/lang-pair
 Authorization: Bearer {{API_TOKEN}}
 Content-Type:	application/json
-X-User-Id:	user1
-X-Chat-Id:	chat1
+X-User-Id:	{{{userId}}}
+X-Chat-Id:	{{{{{chatId}}}}}
 
 {
   "source_lang": "HI",
   "target_lang": "EN"
 }
 
-###
+### Доступный список языков
 
 GET {{API_HOST}}/api/v1/settings/languages
 Authorization: Bearer {{API_TOKEN}}
-X-User-Id:	user1
-X-Chat-Id:	chat1
+X-User-Id:	{{{userId}}}
+X-Chat-Id:	{{{{{chatId}}}}}

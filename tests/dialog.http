@@ -1,22 +1,43 @@
 
+@userId = "1"
+@chatId = "1"
+
+POST {{API_HOST}}/api/v1/settings/lang-pair
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source_lang": "AR",
+  "target_lang": "RU"
+}
+
+### Перевод нескольких сообщений диалога
+
 POST {{API_HOST}}/api/v1/translate/dialogue
 Authorization: Bearer {{API_TOKEN}}
 Content-Type:	application/json
-X-User-Id:	user1
-X-Chat-Id:	chat1
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
 
 {
-  "source": "crm",
+  "source": "consultant",
   "source_lang": "AR",
   "target_lang": "RU",
   "messages": [
     {
       "id": 2,
-      "text": "مرحبا!"
+      "text": "مرحبا! "
     },
     {
       "id": 3,
       "text": "مسألة مالية"
+    },
+     {
+      "id": 5,
+      "text": "address: http://google.com (test with link)"
     }
   ]
 }
+

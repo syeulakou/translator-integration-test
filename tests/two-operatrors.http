@@ -1,0 +1,76 @@
+
+@operator_1 = "301"
+@operator_2 = "302"
+@chatId = "300"
+
+POST {{API_HOST}}/api/v1/settings/lang-pair
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{operator_1}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source_lang": "AR",
+  "target_lang": "RU"
+}
+
+###
+
+POST {{API_HOST}}/api/v1/settings/lang-pair
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{operator_2}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source_lang": "AR",
+  "target_lang": "EN"
+}
+
+###
+
+POST {{API_HOST}}/api/v1/translate/dialogue
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{operator_1}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "AR",
+  "target_lang": "RU",
+  "messages": [
+    {
+      "id": 2,
+      "text": "مرحبا!"
+    },
+    {
+      "id": 3,
+      "text": "مسألة مالية"
+    }
+  ]
+}
+
+###
+
+POST {{API_HOST}}/api/v1/translate/dialogue
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{operator_1}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "AR",
+  "target_lang": "EN",
+  "messages": [
+    {
+      "id": 2,
+      "text": "مرحبا!"
+    },
+    {
+      "id": 3,
+      "text": "مسألة مالية"
+    }
+  ]
+}
