@@ -1,19 +1,9 @@
+### Тестирование метода /message-input для перевода одного сообщения
 
-@userId = "11"
-@chatId = "10"
+@userId = "50"
+@chatId = "50"
 
-POST {{API_HOST}}/api/v1/settings/lang-pair
-Authorization: Bearer {{API_TOKEN}}
-Content-Type:	application/json
-X-User-Id:	{{userId}}
-X-Chat-Id:	{{chatId}}
-
-{
-  "source_lang": "AR",
-  "target_lang": "RU"
-}
-
-### Перевод одного сообщения (почему-то ошибка 404)
+### Перевод одного сообщения (почему-то всегда ошибка 404)
 
 POST {{API_HOST}}/api/v1/translate/message-input
 Authorization: Bearer {{API_TOKEN}}

@@ -1,19 +1,10 @@
+### Тестирование кейса, когда требуется запросить повторный перевод (клиент отредактировал текст сообщения)
+### 1) Перевод первой версии сообщения
+### 2) Перевод второй версии сообщения
 @userId = "201"
 @chatId = "200"
 
-POST {{API_HOST}}/api/v1/settings/lang-pair
-Authorization: Bearer {{API_TOKEN}}
-Content-Type:	application/json
-X-User-Id:	{{userId}}
-X-Chat-Id:	{{chatId}}
-
-{
-  "source_lang": "AR",
-  "target_lang": "RU"
-}
-
-
-### Подключился оператор на языке RU
+### Подключился оператор на языке RU, запросил перевод сообщения
 
 POST {{API_HOST}}/api/v1/translate/dialogue
 Authorization: Bearer {{API_TOKEN}}
@@ -37,7 +28,7 @@ X-Chat-Id:	{{chatId}}
   ]
 }
 
-### Клиент отредактировал сообщения и запрос повторного перевода
+### Клиент отредактировал сообщения и запрошиваем повторного перевод
 
 POST {{API_HOST}}/api/v1/translate/dialogue
 Authorization: Bearer {{API_TOKEN}}

@@ -1,19 +1,12 @@
 
-@userId = "1"
-@chatId = "1"
+### Тестировапние перевода нескольких сообщений диалога
+### 1) Оператор получил сообщения в workspace, запрашиваем переводы сообщений на язык оператора RU
+### 2) Оператор ответил на сообщения клиента на русском, запрашиваем переводы на арабский для отправки клиенту 
 
-POST {{API_HOST}}/api/v1/settings/lang-pair
-Authorization: Bearer {{API_TOKEN}}
-Content-Type:	application/json
-X-User-Id:	{{userId}}
-X-Chat-Id:	{{chatId}}
+@userId = "40"
+@chatId = "40"
 
-{
-  "source_lang": "AR",
-  "target_lang": "RU"
-}
-
-### Перевод нескольких сообщений диалога
+### Перевод нескольких сообщений диалога на русский 
 
 POST {{API_HOST}}/api/v1/translate/dialogue
 Authorization: Bearer {{API_TOKEN}}
@@ -37,6 +30,30 @@ X-Chat-Id:	{{chatId}}
      {
       "id": 5,
       "text": "address: http://google.com (test with link)"
+    }
+  ]
+}
+
+### Перевод нескольких сообщений опера обратно на арабский (Error)
+
+POST {{API_HOST}}/api/v1/translate/dialogue
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "RU",
+  "target_lang": "AR",
+  "messages": [
+    {
+      "id": 14,
+      "text": "Приветсвую! Меня зовут Олег"
+    },
+    {
+      "id": 15,
+      "text": "Для пополнения счета воспользуйтест одним из методов оплаты: 1 2 3"
     }
   ]
 }

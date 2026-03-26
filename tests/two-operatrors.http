@@ -1,33 +1,12 @@
+### Тест: в диалоге 2 оперетора с RU и EN языками
+### 1) Запрашиваем переводы сообщений для Operator1 RU
+### 2) Запрашиваем переводы сообщений для Operator2 EN
 
-@operator_1 = "301"
-@operator_2 = "302"
+@operator_1 = "1301"
+@operator_2 = "1302"
 @chatId = "300"
 
-POST {{API_HOST}}/api/v1/settings/lang-pair
-Authorization: Bearer {{API_TOKEN}}
-Content-Type:	application/json
-X-User-Id:	{{operator_1}}
-X-Chat-Id:	{{chatId}}
-
-{
-  "source_lang": "AR",
-  "target_lang": "RU"
-}
-
-###
-
-POST {{API_HOST}}/api/v1/settings/lang-pair
-Authorization: Bearer {{API_TOKEN}}
-Content-Type:	application/json
-X-User-Id:	{{operator_2}}
-X-Chat-Id:	{{chatId}}
-
-{
-  "source_lang": "AR",
-  "target_lang": "EN"
-}
-
-###
+### Перевод на RU для первого оператора
 
 POST {{API_HOST}}/api/v1/translate/dialogue
 Authorization: Bearer {{API_TOKEN}}
@@ -51,12 +30,12 @@ X-Chat-Id:	{{chatId}}
   ]
 }
 
-###
+### Перевод на EN для первого оператора
 
 POST {{API_HOST}}/api/v1/translate/dialogue
 Authorization: Bearer {{API_TOKEN}}
 Content-Type:	application/json
-X-User-Id:	{{operator_1}}
+X-User-Id:	{{operator_2}}
 X-Chat-Id:	{{chatId}}
 
 {

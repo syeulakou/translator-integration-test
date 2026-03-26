@@ -1,6 +1,9 @@
+### Определение языка полученного текста
 
-@userId = "3"
-@chatId = "3"
+@userId = "1"
+@chatId = "1"
+
+### Опеределение языка текста на русском
 
 POST {{API_HOST}}/api/v1/settings/lang-detect
 Authorization: Bearer {{API_TOKEN}}
@@ -17,7 +20,7 @@ X-Chat-Id:	{{chatId}}
   ]
 }
 
-###
+### Опеределение языка текста на английском
 
 POST {{API_HOST}}/api/v1/settings/lang-detect
 Authorization: Bearer {{API_TOKEN}}
