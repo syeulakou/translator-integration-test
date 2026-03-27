@@ -1,0 +1,60 @@
+### /api/v1/translate/regenerate Новый вариант перевода уже переведенного сообщения.
+
+@userId = "41"
+@chatId = "41"
+
+### Перевод нескольких сообщений диалога на русский 
+
+# @name res
+POST {{API_HOST}}/api/v1/translate/dialogue
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "AR",
+  "target_lang": "RU",
+  "messages": [
+    {
+      "id": 2,
+      "text": "مرحبا! "
+    },
+    {
+      "id": 3,
+      "text": "مسألة مالية"
+    },
+     {
+      "id": 5,
+      "text": "address: http://google.com (test with link)"
+    }
+  ]
+}
+
+
+### Запрос на повторный перевод ранее переведенного сообщения
+
+POST {{API_HOST}}/api/v1/translate/regenerate
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "log_id": "{{res.response.body.log_id}}",
+   "messages": [
+    {
+      "id": 2,
+      "text": "مرحبا! "
+    },
+    {
+      "id": 3,
+      "text": "مسألة مالية"
+    },
+     {
+      "id": 5,
+      "text": "address: http://google.com (test with link)"
+    }
+  ]
+}
