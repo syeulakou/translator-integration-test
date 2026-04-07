@@ -3,9 +3,9 @@
 @userId = "50"
 @chatId = "50"
 
-### Перевод одного сообщения (почему-то всегда ошибка 404)
+### Перевод одного сообщения
 
-POST {{API_HOST}}/api/v1/translate/message-input
+POST {{API_HOST}}/api/v1/translate/message
 Authorization: Bearer {{API_TOKEN}}
 X-User-Id:	{{userId}}
 X-Chat-Id:	{{chatId}}
@@ -15,6 +15,27 @@ Content-Type:	application/json
   "source": "consultant",
   "source_lang": "AR",
   "target_lang": "RU",
+  "input_message": true,
+  "messages": [
+    {
+      "id": 4,
+      "text": "مرحبا"
+    }
+  ]
+}
+
+### Перевод одного сообщения
+
+POST {{API_HOST}}/api/v1/translate/message
+Authorization: Bearer {{API_TOKEN}}
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+Content-Type:	application/json
+
+{
+  "source": "consultant",
+  "source_lang": "RU",
+  "target_lang": "AR",
   "input_message": true,
   "messages": [
     {
