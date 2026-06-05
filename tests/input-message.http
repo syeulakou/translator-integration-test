@@ -1,0 +1,26 @@
+
+### /api/v1/translate/input-message
+
+@userId = "40"
+@chatId = "40"
+
+### Перевод нескольких сообщений диалога на русский 
+
+POST {{API_HOST}}/api/v1/translate/input-message
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "RU",
+  "target_lang": "AR",
+  "input-message": true,
+  "messages": [
+    {
+      "id": 5,
+      "text": "[ссылка](https://galeria.trojmiasto.pl/PGE-Wybrzeze-Gdansk-zdobylo-brazowy-medal-przy-rekordowej-widowni%E2%80%8E,%E2%80%8E4,219763%E2%80%8E.html)"
+    }
+  ]
+}

@@ -57,7 +57,12 @@ X-Chat-Id:	{{chatId}}
     {
       "id": 15,
       "text": "Для пополнения счета воспользуйтест одним из методов оплаты: 1 2 3"
+    },
+    {
+      "id": 16,
+       "text": "[вот вам ссылка](https://galeria.trojmiasto.pl/PGE-Wybrzeze-Gdansk-zdobylo-brazowy-medal-przy-rekordowej-widowni,4,219763.html)"
     }
+    
   ]
 }
 
