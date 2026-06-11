@@ -24,3 +24,23 @@ X-Chat-Id:	{{chatId}}
     }
   ]
 }
+
+### Перевод спецсимволов
+POST {{API_HOST}}/api/v1/translate/input-message
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "RU",
+  "target_lang": "AR",
+  "input-message": true,
+  "messages": [
+    {
+      "id": 6,
+      "text": ";:%^"
+    }
+  ]
+}
