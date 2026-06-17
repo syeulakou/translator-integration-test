@@ -44,3 +44,24 @@ X-Chat-Id:	{{chatId}}
     }
   ]
 }
+
+
+### Перевод сообщения на языке отличным от source lang
+POST {{API_HOST}}/api/v1/translate/input-message
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "RU",
+  "target_lang": "AR",
+  "input-message": true,
+  "messages": [
+     {
+      "id": 22,
+      "text": "Hello! this is not AR language, i expect translation error!"
+    }
+  ]
+}
