@@ -30,7 +30,15 @@ X-Chat-Id:	{{chatId}}
       "id": 3,
       "text": "مسألة مالية"
     },
-     {
+    {
+      "id": 14,
+      "text": "أهلًا يا أوليغ."
+    },
+    {
+      "id": 18,
+      "text": "أهلاً! اسمي أوليغ."
+    },
+    {
       "id": 5,
       "text": "address: http://google.com (test with link)"
     }
@@ -50,6 +58,10 @@ X-Chat-Id:	{{chatId}}
   "source_lang": "RU",
   "target_lang": "AR",
   "messages": [
+     {
+      "id": 14,
+      "text": "privet, ya oleg"
+    },
     {
       "id": 14,
       "text": "Приветсвую! Меня зовут Олег"
@@ -61,6 +73,10 @@ X-Chat-Id:	{{chatId}}
     {
       "id": 16,
        "text": "[вот вам ссылка](https://galeria.trojmiasto.pl/PGE-Wybrzeze-Gdansk-zdobylo-brazowy-medal-przy-rekordowej-widowni,4,219763.html)"
+    },
+    {
+      "id": 17,
+       "text": "English text. i expect it won't be translated. Для пополнения счета воспользуйтест одним из методов оплаты: 1 2 3"
     }
     
   ]
