@@ -46,7 +46,7 @@ X-Chat-Id:	{{chatId}}
 }
 
 ### Перевод нескольких сообщений опера обратно на арабский (Error)
-
+### после перевода проверить сообщение со ссылкой id:16. ожидание: ссылка открывается
 POST {{API_HOST}}/api/v1/translate/dialogue
 Authorization: Bearer {{API_TOKEN}}
 Content-Type:	application/json
@@ -72,13 +72,12 @@ X-Chat-Id:	{{chatId}}
     },
     {
       "id": 16,
-       "text": "[вот вам ссылка](https://galeria.trojmiasto.pl/PGE-Wybrzeze-Gdansk-zdobylo-brazowy-medal-przy-rekordowej-widowni,4,219763.html)"
+       "text": "[вот вам ссылка](https://www.trojmiasto.pl/tv/The-Phantom-of-the-Opera-musical-wszech-czasow-w-Trojmiescie-25-06-2026-video-109100.html)"
     },
     {
       "id": 17,
        "text": "English text. i expect it won't be translated. Для пополнения счета воспользуйтест одним из методов оплаты: 1 2 3"
     }
-    
   ]
 }
 
