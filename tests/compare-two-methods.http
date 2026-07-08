@@ -1,0 +1,90 @@
+### сравнение переводов полученных от 2 разных методов:
+### 1) /api/v1/translate/dialogue
+### 2) /api/v1/translate/input-message
+
+
+@userId = "40"
+@chatId = "40"
+
+### Перевод одного сообщения /dialogue
+
+POST {{API_HOST}}/api/v1/translate/dialogue
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "FR",
+  "target_lang": "EN",
+  "messages": [
+    {
+      "id": 1,
+      "text": "Тетерев"
+    }
+  ]
+}
+
+
+### Перевод одного сообщения /dialogue
+
+POST {{API_HOST}}/api/v1/translate/input-message
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "FR",
+  "target_lang": "EN",
+  "input-message": true,
+  "messages": [
+    {
+      "id": 2,
+      "text": "Тетерев"
+    }
+  ]
+}
+
+### Перевод одного сообщения в обратную сторону /dialogue
+
+POST {{API_HOST}}/api/v1/translate/dialogue
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "EN",
+  "target_lang": "FR",
+  "messages": [
+    {
+      "id": 3,
+      "text": "Тетерев"
+    }
+  ]
+}
+
+### Перевод одного сообщения в обратную сторону /input-message
+
+POST {{API_HOST}}/api/v1/translate/input-message
+Authorization: Bearer {{API_TOKEN}}
+Content-Type:	application/json
+X-User-Id:	{{userId}}
+X-Chat-Id:	{{chatId}}
+
+{
+  "source": "consultant",
+  "source_lang": "EN",
+  "target_lang": "FR",
+  "input-message": true,
+  "messages": [
+    {
+      "id": 4,
+      "text": "Тетерев"
+    }
+  ]
+}
