@@ -1,0 +1,4 @@
+
+
+GET {{API_HOST}}/api/v1/health-check?verbose=false&fresh=false
+Authorization: Bearer {{API_TOKEN}}
